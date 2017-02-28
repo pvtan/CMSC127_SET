@@ -1,0 +1,140 @@
+<div ng-app="app">
+    <div class="navbar-fixed">
+	    
+	    <nav class="amber darken-3">
+	      <div class="nav-wrapper" ng-controller="EventCtrl">
+
+	        <a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+	        <ul class="right">
+	        <div>
+	        
+	     	<li><a class="waves-effect waves-light btn blue darken-2" ng-click ="openLogin()">Login</a></li>
+	        
+	      	<li>
+	       	<div>
+	        	<a class="waves-effect waves-light btn blue darken-2" ng-click="openSignup()">Sign-up</a>
+	        </div>
+	        </li>
+	        </ul>
+	        
+	      </div>
+	    </nav>
+	</div>
+
+	<div id="loginModal" class="modal" ng-controller="EventCtrl" ng-init="login()">
+	    <div class="modal-content">
+	      <div class="input-field ">
+	      <input id="name" type="text" class="validate" ng-model="loginData.username">
+	      <label for="name">Username</label>
+	      </div>
+	      <div class="input-field">
+	      <input id="password" type="password" class="validate" ng-model="loginData.password">
+          <label for="password">Password</label> 
+	     
+	      </div>
+	    </div>
+	    <div class="modal-footer">
+	    	<button ng-click="clicked()" class="btn waves-effect waves-light blue darken-2">Login</button>
+	    </div>
+  	</div>
+
+  	<div id="sign-upModal" class="modal" ng-controller="EventCtrl" ng-init="addOrganizer()">
+	    <div class="modal-content">
+	       <h3 class="center"> SIGN-UP </h3><hr>
+	       <form class="center col s12">
+		      <div class="row">
+		        <div class="input-field col s9">
+		          <i class="material-icons prefix">account_circle</i>
+		          <input id="input_password" type="text" class="validate" ng-model="newOrganizer.username">
+		          <label for="input_password">Username</label>
+		        </div>
+		        <div class="input-field col s9">
+		          <i class="material-icons prefix">vpn_key</i>
+		          <input id="input_password" type="password" class="validate" ng-model="newOrganizer.password">
+		          <label for="input_password">Password</label>
+		        </div>
+		        <div class="input-field col s9">
+		        	<i class="material-icons prefix">supervisor_account</i>
+			      	<input id="input_organization" type="text" class="validate" ng-model="newOrganizer.organization">
+			      	<label for="input_organization">Organization</label>
+		      	</div>
+		      	<div class="input-field col s9">
+		      		<i class="material-icons prefix">perm_identity</i>
+			      	<input id="input_contact" type="text" class="validate" ng-model="newOrganizer.contact_person">
+			      	<label for="input_contact">Contact Person</label>
+		      	</div>
+		        <div class="input-field col s9">
+		        	<i class="material-icons prefix">dialpad</i>
+			        <input id="ContactNum" type="text" class="validate" ng-model="newOrganizer.organization_contact_number">
+			        <label for="ContactNum">Contact Number</label>
+			        </div>
+		      	<div class="input-field col s9">
+		      		<i class="material-icons prefix">location_on</i>
+			      	<input id="input_address" type="text" class="validate" ng-model="newOrganizer.address">
+			      	<label for="input_address">Address</label>
+		      	</div>
+		      	<div class="input-field col s9">
+		      		<i class="material-icons prefix">email</i>
+			      	<input id="email" type="email" class="validate" ng-model="newOrganizer.email_address">
+	            	<label for="email">Email</label>
+	            </div>
+		      	<div class="input-field col s9">
+		      		<i class="material-icons prefix">assignment_ind</i>
+			      	<input id="input_adviser" type="text" class="validate" ng-model="newOrganizer.adviser">
+			      	<label for="input_adviser">Adviser</label>
+		      	</div>
+		      	<div class="input-field col s9">
+		      		<i class="material-icons prefix">contact_phone</i>
+			      	<input id="input_ad_contact" type="text" class="validate" ng-model="newOrganizer.adviser_contact_number">
+			      	<label for="input_ad_contact">Adviser Contact Number</label>
+		      	</div>
+		      </div>
+		      
+
+		    </form>
+	    </div>
+	    <div class="modal-footer">
+	    	 <button class="btn waves-effect waves-light blue darken-2" ng-click="clicked()">Sign-up</button>
+	    </div>
+
+  	</div>
+
+
+	<section>
+	<div class="row center-cols center-align">
+		
+		<div class="parallax-container">
+	    <div class="parallax"><img src="../assets/images/party3.jpg"></div>
+	  </div>
+	</div>
+	
+	<div class="row center-cols center-align">
+		<h3> Start now with the S.E.T experience! </h3>
+		<div class="col m4">
+			
+			<i class="large material-icons icon-blue">library_add</i>
+			<h5> SIMPLE </h5><hr>
+			<p> Event and Venue Reservation </p>
+			  
+		 </div>
+		 <div class="col m4">
+			<i class="large material-icons icon-light-blue">done_all</i>
+			<h5> EASY </h5><hr>
+			<p> Interface for Reservations </p>
+			  
+		 </div>
+		 <div class="col m4">
+			<i class="large material-icons icon-blue">schedule</i>
+			<h5> TRUE </h5><hr>
+			<p> Time Tables and Calendar </p>
+		 </div>
+		 
+	</div>
+	</section>
+</div>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
+<script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="../assets/js/short2.js"></script>
+<script> $(document).ready(function(){ $('.modal').modal();}) </script>

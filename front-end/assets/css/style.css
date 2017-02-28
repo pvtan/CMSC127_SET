@@ -1,0 +1,287 @@
+@font-face {
+	font-family: 'rosettaIconFont';
+	src: url(../fonts/rosetta-icons/rosetta-icons-Regular.woff);
+	src: url(../fonts/rosetta-icons/rosetta-icons-Regular.ttf);
+}
+
+.Icon {
+	font-family: 'rosettaIconFont';
+	font-size:22px;
+	display: block;
+	font-weight: normal;
+	font-style: normal;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Icon--home:before { content: "\f053"; font-size:25px;}
+.Icon--message:before { content: "\f054"; }
+.Icon--tweet:before { content: "\f029"; font-size:23px;}
+.Icon--notifications:before{content:"\f055"}
+
+/*
+.Icon--tweet:hover {
+	background-color: #0084B4;
+	padding: 3px 0px;
+	border-radius: 5px;
+}*/
+
+body{
+    background-color: #f5f8fa;
+}
+nav {
+    height: 45px;
+    line-height: 45px;
+}
+
+.nav-wrapper{
+    width: 90%;
+    margin: auto;
+}
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
+    height: 45px;
+    line-height: 45px;
+}
+nav li a{
+    font-size: 13px;
+}
+
+nav li span{
+    margin-right: 4px;
+}
+
+nav ul li:hover {
+  color: red;
+}
+
+nav ul li.active{
+
+    background-color: #757575;
+    height: 5px;
+    vertical-align: bottom;
+}
+
+.brand-logo i{
+    font-size: 25px;
+}
+
+#composeTweet{
+    text-transform: capitalize;
+    font-size: 13px;
+    height: 34px;
+    padding: 2px 14px;
+    border-radius: 5px;
+    line-height: 30px;
+    margin: 0px;
+
+}
+
+#composeTweet span{
+    margin-right: 5px;
+
+}
+
+.container{
+    margin-top: 10px;
+    width: 90%;
+}
+
+.card{
+    border-radius: 6px;
+    border: 1px solid #e1e8ed;
+}
+.card-image{
+    border-radius: 6px 6px 0px 0px;
+}
+#profile-Card{
+    height: auto;
+    margin-bottom: 0px;
+}
+
+#profile-Cover{
+    background-color: #0084B4;
+    height: 60%;
+    max-height: 60%;
+
+}
+#profile-Card-Info{
+    padding: 5px 10px;
+    margin-top: -50px;
+    margin-left: 2px;
+    width: 100%;
+}
+#profile-Card-Info #profile-Name{
+    font-weight: bolder;
+    font-size: 1.3em;
+    padding-left: 80px;
+}
+
+#profile-Card-Info #profile-Handle{
+    font-size: 0.8em;
+    padding-left: 80px;
+    margin-top: -5px;
+}
+
+#profile-Icon-Holder{
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+
+#profile-Icon{
+    width: 75px;
+    height: 75px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.row{
+    margin-bottom: 0px;
+}
+
+#trending{
+    height: auto;
+}
+#trending #trend-title{
+    color: #8899a6;
+    font-size: 18px;
+    font-weight:
+}
+
+#trending #change-Trend{
+    color: black;
+    font-size: 12px;
+
+}
+
+#trending ul{
+    margin: 0px;
+}
+
+#trending li{
+    margin-bottom: 5px;
+}
+#trending ul:last-child{
+    margin-bottom: 0px;
+}
+#trending li *{
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+#trending li strong{
+    font-weight: bold;
+}
+
+#trending span{
+    font-weight: 100;
+    color: #8899a6;
+}
+
+#trending .card-content {
+    padding: 15px 15px;
+}
+
+
+#feed-Card{
+    padding-bottom: 10px;
+    height: auto;
+}
+#feed-Timeline{
+    height: auto;
+}
+.feed-Entry{
+    padding: 12px 10px 8px 10px;
+    border-top: 1px solid #e1e8ed;
+        /*line-height: auto;*/
+}
+
+.feed-Entry *{
+    display: inline-block;
+}
+
+.feed-Entry:last-of-type{
+    border-bottom: 1px solid #e1e8ed;
+}
+.feed-Tweet{
+    vertical-align: top;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.feed-Tweet div{
+    display: block;
+    /*line-height: 20px;*/
+}
+
+.feed-Tweet div span{
+    margin-right: 3px;
+}
+
+.feed-Tweetbox{
+    border-radius: 6px 6px 0px 0px;
+    background-color: #EBEBEB;
+    height: 55px;
+    padding: 10px 3% 10px 7%;
+}
+.feed-Tweetbox input{
+    background-color: white;
+    height: 31px;
+    width: 98%;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: black;
+}
+
+
+.feed-Entry .feed-Icon{
+    border-radius: 3px;
+    width: 45px;
+    height: 45px;
+}
+
+.feed-Entry .feed-Name{
+    font-weight: bold
+}
+
+.feed-Entry .feed-Handle, .bullet, .feed-Time{
+    color: #8899a6;
+    font-size: 14px;
+}
+
+.feed-Actions ul{
+    margin: 0px;
+}
+.feed-Actions li{
+    font-size: 17px;
+    margin-right: 50px;
+}
+.feed-Actions li:first-of-type{
+    font-size: 14px;
+
+}
+
+.feed-Actions span{
+    margin-left: 4px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.feed-End{
+    padding: 12px 0 0 10px;
+}
+
+.feed-End span{
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+.feed-End span i{
+    font-size: 30px;
+    padding: 0 25px;
+}

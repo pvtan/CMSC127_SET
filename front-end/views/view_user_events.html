@@ -1,0 +1,179 @@
+<div class="navbar-fixed" ng-controller="EventCtrl">
+<nav class="orange darken-2">
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/#/edit_user_profile" class="orange-text text-darken-4"><i class="material-icons right">perm_identity</i>Account</a></li>
+  <li class="divider"></li>
+  <li><a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a></li>
+  <li class="divider"></li>
+  <li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+</ul>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+          <li>
+              <!-- SEARCH BAR -->
+              <div class="input-field">
+              <input id="search" type="search" required style="height:35px;width:200px;" placeholder="Search event" ng-model="name_event">
+              <label for="search"></label>
+            </div>
+          </li>
+          <li> <a ng-click="getCurrentUser()"><i class="material-icons">search</i></a> </li>
+      </li>
+    	<li><a class="waves-effect waves-light btn blue darken-2" href="/#/home">Home</a></li>
+    	<li><a class="dropdown-button waves-effect waves-light btn blue darken-2" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+    
+  </div>
+</nav>
+
+<div id="searchEventModal" class="modal">
+<div class="modal-content">
+  <p>hello</p>
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Start time</th>
+          <th>End time</th>
+          <th>Theme</th>
+          <th>Dress Code</th>
+          <th>Details</th>
+          <th>Venue</th>
+          <th>Organizer</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="a in eventsResult">
+        <tr>
+          <th>{{a.name}}</th>
+          <th>{{a.time_start}}</th>
+          <th>{{a.time_end}}</th>
+          <th>{{a.theme}}</th>
+          <th>{{a.dress_code}}</th>
+          <th>{{a.details}}</th>
+          <th>{{a.venue}}</th>
+          <th>{{a.organizer}}</th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="modal-footer">
+  <button ng-click="closeEventSearch()" class="btn waves-effect waves-light blue darken-2">Okay</button>
+</div>
+</div>
+
+</div>
+<div ng-app="app" ng-controller="EventCtrl" class="container" id="printArea">
+<div class="row center-cols center-align">
+  <div>   
+    <h1>Events</h1>
+  </div>
+<ul>
+  <li class="divider"></li>
+</ul>
+    <ul>
+      <li class="divider"></li>
+    </ul>          
+      </div>
+    <div class="row">
+        <div class="col s12 m12 l4">
+         <div class="row center-cols center-align">
+  <div>   
+    <h3>Pending</h>
+  </div>
+    <ul>
+      <li class="divider"></li>
+    </ul>          
+      </div>                
+      <ul ng-app="app" ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getUser(1)">      
+      <li ng-repeat="a in pendingEvents | orderBy: 'event_date'">
+          <a ng-click="cancelEvent(a.name);pendingEvents.splice(pendingEvents.indexOf(a), 1)" class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">clear</i></a>
+            
+          <div class="collapsible-header"><div class="chip"><img src="../assets/images/for.jpg" alt="Contact Person"/>{{a.name}}</div></div>
+          <div class="collapsible-body">
+          <div><p>{{a.event_date}} from {{a.time_start}} to {{a.time_end}}</p></div>
+          <div class="input-field col s12">
+              <input id="Name" type="text" class="validate" ng-model="a.name">
+              <label for="date" class="left-align">Name</label>
+            </div>
+           <div class="input-field col s12">
+              <input id="Date" type="text" class="datepicker validate" ng-model="a.event_date">
+              <label for="date" class="left-align">Date</label>
+            </div>
+             <div class="input-field col s12">
+                <input id="TimeStart" type="time" class="validate" ng-model="a.time_start">
+                <label for="input_password">Time Start</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="TimeEnd" type="time" class="validate" ng-model="a.time_end">
+                <label for="input_password">Time End</label>
+            </div>
+             <div class="input-field col s12">
+                <input id="Theme" type="text" class="validate" ng-model="a.theme">
+                <label for="input_password">Theme</label>
+            </div>
+             <div class="input-field col s12">
+                <input id="Dress Code" type="text" class="validate" ng-model="a.dress_code">
+                <label for="input_password">Dress Code</label>
+            </div>
+             <div class="input-field col s12">
+                <input id="Details" type="text" class="validate" ng-model="a.details">
+                <label for="input_password">Details</label>
+            </div>
+            <div class="row center-align">
+            <button ng-click="updateEvent(a)" class="btn waves-effect waves-light blue darken-2">Submit</button>
+            </div>
+          </div>
+      </li>
+     
+    </ul>
+      </div>
+    <div class="col s12 m12 l8">
+     <div class="row center-cols center-align">
+  <div>   
+    <h3>Approved</h3>
+  </div>
+    <ul>
+      <li class="divider"></li>
+    </ul>          
+      </div>  
+      <div ng-app="app" ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getUser(0)">
+	<div class="col m6" ng-repeat="b in approvedEvents | orderBy: b.event_date">
+		<div class="card small" style="width: 350px;">
+		    <div class="card-image waves-effect waves-block waves-light">
+		      <img class="activator" src="../assets/images/bak.jpg">
+		    </div>
+		    <div class="card-content">
+		      <span class="card-title activator grey-text text-darken-4"><a style="font-size: 20px">{{b.name}}</a><i class="material-icons right">more_vert</i><br>
+          </span>
+		    </div>
+		    <div class="card-reveal">
+		      <span class="card-title grey-text text-darken-4">Date: {{b.event_date}}<i class="material-icons right">close</i></span>
+		      <p> Time: {{b.time_start}} to {{b.time_end}}<br>
+	          Theme: {{b.theme}}<br>
+	          Dress Code: {{b.dress_code}}<br>
+	          Details: {{b.details}}<br>
+            Venue: {{b.venue}}<br>
+            Organizer: {{b.organizer}}<br></p>
+		    </div>
+		  </div>
+
+		  
+	 </div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
+<script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="../assets/js/short2.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.datepicker').pickadate({
+    format: 'yyyy-mm-dd'
+  });
+});
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html ng-app="app" lang="en"> 
+    <head> 
+        <meta charset="utf-8">
+	    <title>SET</title>
+	    
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/materialize.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+        
+        <style>
+	        #nav-mobile{
+        		font-size: 100;
+        	}
+        	nav{
+        		padding-top: 10px;
+        		height: 10%;
+        	}
+        	.caro{
+        		-webkit-filter: brightness(100%); /* Safari */
+        		filter: brightness(50%);
+        		
+        	}
+        	body {
+		        display: flex;
+		        min-height: 100vh;
+		        flex-direction: column;
+		      }
+
+		     main {
+		        flex: 1 0 auto;
+		      }
+              .collapsible li .collapsible-header{
+                height:75px;
+                padding: 10px;
+             }
+             #lean_overlay {
+                position: fixed;
+                z-index:100;
+                top: 0px;
+                left: 0px;
+                height:100%;
+                width:100%;
+                background: #000;
+                display: none;
+            }
+            #modal123{
+                padding: 10px;
+            }
+        </style>
+        <script type="text/javascript" src="assets/js/jquery-1.12.3.js""></script>
+        <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-route.min.js"></script>
+    </head> 
+    <body>
+        <div>
+        <div ng-view=""> </div>
+        <footer class="page-footer orange darken-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col l6 s12">
+                    <h5 class="white-text">For Contact Purposes</h5>
+                    <p class="grey-text text-lighten-4"><i class="material-icons leftt">settings</i>Contact: SET Team</p>
+                  </div>
+                  <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">You can Visit us Here:</h5>
+                    <ul>
+                      <li><a class="grey-text text-lighten-3" href="#!">fb.com</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">twitter.com</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Tumblr</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-copyright">
+                <div class="container">
+                © 2016 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+              </div>
+        </footer>
+        </div>   
+      <script type="text/javascript" src="../assets/js/short2.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+	    <script type="text/javascript" src="controllers/controller.js"></script>
+	    <script type="text/javascript" src="services/service.js"></script>	    
+    </body> 
+</html>

@@ -1,0 +1,157 @@
+   <ul id="dropdown1" class="dropdown-content">
+  <li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+</ul>
+
+<div class="navbar-fixed">
+  <nav class="orange darken-2">
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/homeadmin">Edit Events</a></li>
+        <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/get_venues">Edit Venue</a></li>
+        <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/edit_user">Edit Users</a></li>
+        <li><a class="dropdown-button waves-effect waves-light btn blue darken-2" class="blueB" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>    
+    </div>
+  </nav>
+</div>
+<div class="container">
+<div class="row center-cols center-align">
+  <div>   
+    <h1>Users</h1>
+  </div>
+  <ul>
+    <li class="divider"></li>
+  </ul>          
+</div>
+<div class="row">
+  <div class="col s12 m12 l6">
+    <div class="row center-cols center-align">
+      <div>   
+        <h3>Admin</h>
+      </div>
+      <ul>
+        <li class="divider"></li>
+      </ul>          
+    </div>                
+    <ul ng-app="app" ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getAdmins()">      
+        <li class="hoverable" ng-repeat="admin in admins">
+          <a ng-click="removeAdmin(admin.username);admins.splice(admins.indexOf(admin), 1)" class='waves-effect waves-light btn-floating btn-small blue darken-2 right'><i class="material-icons right">clear</i></a>
+          <div class="collapsible-header"><div class="chip"><img src="../assets/images/for.jpg" alt="Contact Person">
+          {{admin.name}}</div></div>
+          <div class="collapsible-body">            
+            
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="Username" type="text" class="validate" ng-model="admin.username">
+                <label for="input_password">Username</label>
+              </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="Name" type="text" class="validate" ng-model="admin.name">
+                <label for="input_password">Name</label>
+              </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="Password" type="password" class="validate" ng-model="admin.password">
+                <label for="input_password">Password</label>
+            </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="Contact Number" type="text" class="validate" ng-model="admin.contact_number">
+                <label for="input_password">Contact Number</label>
+              </div>
+            <div class="row center-align">
+            <button ng-click="updateAdmin(admin)" class="btn waves-effect waves-light blue darken-2">Submit</button>
+            </div>
+        </div>
+        </li>
+    </ul>
+  </div>
+  <div class="col s12 m12 l6">
+      <div class="row center-cols center-align">
+        <div>   
+          <h3>Organizers</h3>
+        </div>
+        <ul>
+          <li class="divider"></li>
+        </ul>          
+      </div>
+      <ul ng-app="app" ng-controller="EventCtrl "class="collapsible popout" data-collapsible="accordion" ng-init="getOrganizers()">      
+        <li class="hoverable" ng-repeat="org in organizers" ng-init="removeOrganizer()">
+            <a ng-click="clicked(org.username);organizers.splice(organizers.indexOf(org), 1)" class='waves-effect waves-light btn-floating btn-small blue darken-2 right'><i class="material-icons right">clear</i></a>
+            <a class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">create</i></a>
+            <div class="collapsible-header"><div class="chip"><img src="../assets/images/for.jpg" alt="Contact Person">{{org.organization}}</div></div>
+            <!-- start of edit -->
+            <!-- change ng-model values and placeholders -->
+            <div class="collapsible-body">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="input_password" type="text" class="validate" ng-model="org.username">
+                <label for="input_password">Username</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="input_password" type="password" class="validate" ng-model="org.password">
+                <label for="input_password">Password</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">supervisor_account</i>
+                <input id="input_organization" type="text" class="validate" ng-model="org.organization">
+                <label for="input_organization">Organization</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">contact_mail</i>
+                <input id="input_email" type="text" class="validate" ng-model="org.email_address">
+                <label for="input_email">Email Address</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="input_contact" type="text" class="validate" ng-model="org.contact_person">
+                <label for="input_contact">Contact Person</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">contact_phone</i>
+                <input id="input_email" type="text" class="validate" ng-model="org.email_address">
+                <label for="input_email">Contact Number</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">assignment_ind</i>
+                <input id="input_adviser" type="text" class="validate" ng-model="org.adviser">
+                <label for="input_adviser">Adviser</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">contact_phone</i>
+                <input id="input_ad_contact" type="text" class="validate" ng-model="org.organization_contact_number">
+                <label for="input_ad_contact">Adviser Contact Number</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">location_on</i>
+                <input id="input_address" type="text" class="validate" ng-model="org.address">
+                <label for="input_address">Address</label>
+              </div>
+              <div class="row center-align">
+               <button ng-click="updateOrganizerByAdmin(org)" class="btn waves-effect waves-light blue darken-2">Submit</button>
+              </div>
+            
+
+          </div>
+        </li>
+      </ul>        
+  </div>
+</div> 
+</div>
+<div class="fixed-action-btn">
+<a class="btn-floating btn-large blue darken-3">
+  <i class="large material-icons">add</i>
+</a>
+<ul>    
+  <li> <a class='btn-floating waves-effect waves-light btn-large orange darken-2' href='/#/add_organizer' modal>User</a></li>     
+
+  <li><a class="btn-floating waves-effect waves-light btn-large orange darken-2" href="/#/add_admin">Admin</a></li>
+</ul>
+</div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
+<script src="../assets/js/materialize.min.js"></script>
+<script src="../assets/js/short2.js"></script>
