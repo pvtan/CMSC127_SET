@@ -1,64 +1,73 @@
 <ul id="dropdown1" class="dropdown-content">
-      <li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
-    </ul>
+	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+</ul>
     
-<div class="navbar-fixed">
-    
-    <nav class="orange darken-2">
-   
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/homeadmin">Edit Events</a></li>
-        <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/get_venues">Edit Venue</a></li>
-        <li><a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/edit_user">Edit Users</a></li>
-            <li><a class="dropdown-button waves-effect waves-light btn  blue darken-2" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-        
-      </div>
-    </nav>
+<div class="navbar-fixed">    
+	<nav class="orange darken-2">
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+			<ul class="right hide-on-med-and-down">
+				<li>
+					<a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/homeadmin">Edit Events</a>
+				</li>
+				<li>
+					<a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/get_venues">Edit Venue</a>
+				</li>
+				<li>
+					<a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/edit_user">Edit Users</a>
+				</li>
+				<li>
+					<a class="dropdown-button waves-effect waves-light btn  blue darken-2" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 </div>
+
 <div class="row center-cols center-align">
-<div>
-    <h1>Available Venue</h1>
+	<div>
+		<h1>Available Venue</h1>
+	</div>
+	<ul>
+		<li class="divider"></li>
+	</ul>
 </div>
-    <ul>
-    <li class="divider"></li>
-    </ul>
-    </div>
+
 <div ng-app="app" ng-controller="EventCtrl" ng-init="getVenues()" class="col s8 l4">
-     <ul class="collapsible popout" data-collapsible="accordion">         
-        <li class="hoverable" ng-repeat="venue in venues" ng-init="removeVenue()">
-            <a ng-click="clicked(venue.name);venues.splice(venues.indexOf(venue), 1)" class='waves-effect waves-light btn blue darken-2 right'>Delete<i class="material-icons right">clear</i></a>
-            <div class="collapsible-header" ng-model="venue.name"><div class="chip" style="height:48px;"><img src="../assets/images/for.jpg" style="height:40px; width: 40px;" alt="Contact Person">{{venue.name}}</div></div>
-            <div class="collapsible-body">
-            
-             <div class="input-field col s12">
-                <input id="input_password" type="text" class="validate" ng-model="venue.location">
-                <label for="input_password">Location</label>
-            </div>
-             <div class="input-field col s12">
-                <input id="input_password" type="text" class="validate" ng-model="venue.capacity">
-                <label for="input_password">Capacity</label>
-            </div>
-             <div class="input-field col s12">
-                <input id="input_password" type="text" class="validate" ng-model="venue.parking_space_capacity">
-                <label for="input_password">Parking Space Capacity</label>
-            </div>
-            <div class="input-field col s12">
-                <input id="input_password" type="text" class="validate" ng-model="venue.type">
-                <label for="input_password">Type</label>
-            </div>
-            <div class="input-field col s12">
-                <input id="input_password" type="text" class="validate" ng-model="venue.details">
-                <label for="input_password">Details</label>
-            </div>
-            <div class="row center-align">
-            <button ng-click="updateVenue(venue)" class="btn waves-effect waves-light blue darken-2">Submit</button>
-            </div>
-            </div>
-        </li>   
-      </ul>
+	<ul class="collapsible popout" data-collapsible="accordion">         
+		<li class="hoverable" ng-repeat="venue in venues" ng-init="removeVenue()">
+			<a ng-click="clicked(venue.name);venues.splice(venues.indexOf(venue), 1)" class='waves-effect waves-light btn blue darken-2 right'>Delete<i class="material-icons right">clear</i></a>
+			<div class="collapsible-header" ng-model="venue.name">
+				<div class="chip" style="height:48px;"><img src="../assets/images/for.jpg" style="height:40px; width: 40px;" alt="Contact Person">{{venue.name}}</div>
+			</div>
+			<div class="collapsible-body">
+				<div class="input-field col s12">
+					<input id="input_password" type="text" class="validate" ng-model="venue.location">
+					<label for="input_password">Location</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="input_password" type="text" class="validate" ng-model="venue.capacity">
+					<label for="input_password">Capacity</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="input_password" type="text" class="validate" ng-model="venue.parking_space_capacity">
+					<label for="input_password">Parking Space Capacity</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="input_password" type="text" class="validate" ng-model="venue.type">
+					<label for="input_password">Type</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="input_password" type="text" class="validate" ng-model="venue.details">
+					<label for="input_password">Details</label>
+				</div>
+				<div class="row center-align">
+					<button ng-click="updateVenue(venue)" class="btn waves-effect waves-light blue darken-2">Submit</button>
+				</div>
+			</div>
+		</li>   
+	</ul>
 </div>
+
 <script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
 <script type="text/javascript" src="../assets/js/materialize.min.js"></script>

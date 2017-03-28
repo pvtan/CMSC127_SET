@@ -1,95 +1,108 @@
 <ul id="dropdown1" class="dropdown-content">
-      <li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
-    </ul>
-    <div class="navbar-fixed">
-    
-    <nav class="orange darken-2">
-    <ul id="dropdown1" class="dropdown-content">
-    <li><a href="/#/edit_profile" class="orange-text text-darken-4"><i class="material-icons right">perm_identity</i>Account</a></li>
-    <li class="divider"></li>
-    <li><a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a></li>
-    <li class="divider"></li>
-    <li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
-  </ul>
-      <div class="nav-wrapper">
-        <a href="/#/home" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
-        <ul class="right hide-on-med-and-down" ng-controller="EventCtrl">
-          <li><a class="waves-effect waves-light btn blue darken-2" href="/#/home">Home</a></li>
-          <li><a class="dropdown-button waves-effect waves-light btn  blue darken-2" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-      </div>
-    </nav>
+	<li ng-controller="EventCtrl" ng-init="logout()">
+		<a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a>
+	</li>
+</ul>
+
+<div class="navbar-fixed">    
+	<nav class="orange darken-2">
+		<ul id="dropdown1" class="dropdown-content">
+			<li>
+				<a href="/#/edit_profile" class="orange-text text-darken-4"><i class="material-icons right">perm_identity</i>Account</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a>
+			</li>
+			<li class="divider"></li>
+			<li ng-controller="EventCtrl" ng-init="logout()">
+				<a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a>
+			</li>
+		</ul>
+		<div class="nav-wrapper">
+			<a href="/#/home" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+			<ul class="right hide-on-med-and-down" ng-controller="EventCtrl">
+				<li>
+					<a class="waves-effect waves-light btn blue darken-2" href="/#/home">Home</a>
+				</li>
+				<li>
+					<a class="dropdown-button waves-effect waves-light btn  blue darken-2" href="#!" data-activates="dropdown1">Me<i class="material-icons right">arrow_drop_down</i></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 </div>
 
-  <div class="container center" ng-app="app" ng-controller="EventCtrl" ng-init="getDetails()">
-    <div class="row center-cols center-align">
-      <div>   
-        <h1>Organizer Form</h1>
-      </div>
-      <ul>
-        <li class="divider"></li>
-      </ul>          
-    </div>
-    <div class="row">
-      <form class="col s12 center-align">
-        <div class="row">
-          <div class="input-field col s12 ">
-            <label for="org_name">Organization Name</label>
-            <input id="OrgName" type="text" class="validate center-align center" ng-model="currentUser.organization">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 ">
-            <input id="userName" type="text" class="validate center-align center" ng-model="currentUser.username">
-            <label for="username">Username</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate center-align center" ng-model="currentUser.password">
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 ">
-            <input id="ContactNum" type="text" class="validate center-align center" ng-model="currentUser.organization_contact_number">
-            <label for="ContactNum">Contact Number</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 ">
-            <input id="ContactPers" type="text" class="validate center-align center" ng-model="currentUser.contact_person">
-            <label for="ContactPerson">Contact Person</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 ">
-            <input id="Address" type="text" class="validate center-align center" ng-model="currentUser.address">
-            <label for="Address">Address</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate center-align center" ng-model="currentUser.email_address">
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 ">
-            <input id="Adviser" type="text" class="validate center-align center" ng-model="currentUser.adviser">
-            <label for="Adviser">Adviser</label>
-          </div>
-        </div>
-         <div class="row">
-          <div class="input-field col s12 ">
-            <input id="AdviserCN" type="text" class="validate center-align center" ng-model="currentUser.adviser_contact_number">
-            <label for="AdviserCN">Adviser Contact Number</label>
-          </div>
-        </div>
-      </form>
-    </div>
-    <button ng-click="clicked()" class="waves-effect waves-light btn blue darken-2" onclick="Materialize.toast('Organizer Added', 2000)" href="/#/edit_user">Submit</button>
-  </div>
+<div class="container center" ng-app="app" ng-controller="EventCtrl" ng-init="getDetails()">
+	<div class="row center-cols center-align">
+		<div>   
+			<h1>Organizer Form</h1>
+		</div>
+		<ul>
+			<li class="divider"></li>
+		</ul>          
+	</div>
+	<div class="row">
+		<form class="col s12 center-align">
+			<div class="row">
+				<div class="input-field col s12 ">
+					<label for="org_name">Organization Name</label>
+					<input id="OrgName" type="text" class="validate center-align center" ng-model="currentUser.organization">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="userName" type="text" class="validate center-align center" ng-model="currentUser.username">
+					<label for="username">Username</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" type="password" class="validate center-align center" ng-model="currentUser.password">
+					<label for="password">Password</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="ContactNum" type="text" class="validate center-align center" ng-model="currentUser.organization_contact_number">
+					<label for="ContactNum">Contact Number</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="ContactPers" type="text" class="validate center-align center" ng-model="currentUser.contact_person">
+					<label for="ContactPerson">Contact Person</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="Address" type="text" class="validate center-align center" ng-model="currentUser.address">
+					<label for="Address">Address</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="email" type="email" class="validate center-align center" ng-model="currentUser.email_address">
+					<label for="email">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="Adviser" type="text" class="validate center-align center" ng-model="currentUser.adviser">
+					<label for="Adviser">Adviser</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 ">
+					<input id="AdviserCN" type="text" class="validate center-align center" ng-model="currentUser.adviser_contact_number">
+					<label for="AdviserCN">Adviser Contact Number</label>
+				</div>
+			</div>
+		</form>
+	</div>
+	<button ng-click="clicked()" class="waves-effect waves-light btn blue darken-2" onclick="Materialize.toast('Organizer Added', 2000)" href="/#/edit_user">Submit</button>
+</div>
+
 <script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
 <script src="../assets/js/materialize.min.js"></script>
 <script src="../assets/js/short2.js"></script>
