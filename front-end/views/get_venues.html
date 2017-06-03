@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>
     
 <div class="navbar-fixed">    
@@ -33,7 +33,7 @@
 	</ul>
 </div>
 
-<div ng-app="app" ng-controller="EventCtrl" ng-init="getVenues()" class="col s8 l4">
+<div ng-controller="VenueCtrl" ng-init="getVenues()" class="col s8 l4">
 	<ul class="collapsible popout" data-collapsible="accordion">         
 		<li class="hoverable" ng-repeat="venue in venues" ng-init="removeVenue()">
 			<a ng-click="clicked(venue.name);venues.splice(venues.indexOf(venue), 1)" class='waves-effect waves-light btn blue darken-2 right'>Delete<i class="material-icons right">clear</i></a>

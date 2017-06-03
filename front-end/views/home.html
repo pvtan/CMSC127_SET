@@ -1,4 +1,4 @@
-<div ng-controller="EventCtrl">
+<div ng-controller="VenueCtrl">
 	<div class="navbar-fixed">
 		<nav class="orange darken-2">
 			<ul id="dropdown1" class="dropdown-content">
@@ -10,7 +10,7 @@
 					<a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a>
 				</li>
 				<li class="divider"></li>
-				<li ng-controller="EventCtrl" ng-init="logout()">
+				<li ng-controller="UserCtrl" ng-init="logout()">
 					<a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a>
 				</li>
 			</ul>
@@ -38,9 +38,8 @@
 		</nav>
 	</div>
 
-	<div id="searchModal" class="modal">
+	<div id="searchModal" class="modal" ng-controller="FrontendCtrl">
 		<div class="modal-content">
-			<p>hello</p>
 			<div class="row">
 				<table>
 					<thead>
@@ -112,7 +111,7 @@
 </ul> 
 
 <section>
-	<div class="row center-cols center-align" ng-app="app" ng-controller="EventCtrl" ng-init="getVenues()">
+	<div class="row center-cols center-align" ng-controller="VenueCtrl" ng-init="getVenues()">
 		<div class="col m4" ng-repeat="venue in venues">
 			<div class="card small" style="width: 350px;">
 				<div class="card-image waves-effect waves-block waves-light">

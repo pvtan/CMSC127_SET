@@ -1,11 +1,11 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>  
 
 <div class="navbar-fixed">      
 	<nav class="orange darken-2">
 		<div class="nav-wrapper">
-			<a href="index.html" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
+			<a href="/#/homeadmin" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
 			<ul class="right hide-on-med-and-down">
 				<li>
 					<a class="waves-effect waves-light btn blue darken-2" class="blueB" href="/#/homeadmin">Edit Events</a>
@@ -24,7 +24,7 @@
 	</nav>
 </div>
 
-<div ng-app="app" ng-controller="EventCtrl" ng-init="addAdmin()" class="container center">
+<div ng-controller="AdminCtrl" ng-init="addAdmin()" class="container center">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Admin Form</h1>
@@ -61,9 +61,9 @@
 			</div>        
 		</form>
 	</div>
-	<a class="waves-effect waves-light btn blue darken-2" onclick="Materialize.toast('Admin Added', 2000)" ng-click="clicked()">Submit</a>
+	<a class="waves-effect waves-light btn blue darken-2" ng-click="clicked()">Submit</a>
 </div> 
 
 <script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
-<script src="../assets/js/materialize.min.js"></script>
-<script src="../assets/js/short2.js"></script>
+<script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="../assets/js/short2.js"></script>

@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>
 
 <div class="navbar-fixed">      
@@ -24,7 +24,7 @@
 	</nav>
 </div>
 
-<div class="container center" ng-app="app" ng-controller="EventCtrl" ng-init="addOrganizer()">
+<div class="container center" ng-controller="OrganizerCtrl" ng-init="addOrganizer()">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Organizer Form</h1>

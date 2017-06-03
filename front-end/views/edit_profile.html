@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>
 
 <div class="navbar-fixed">
@@ -43,7 +43,7 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>                
-			<ul ng-app="app" ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getAdmins()">      
+			<ul ng-controller="AdminCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getAdmins()">      
 				<li class="hoverable" ng-repeat="admin in admins">
 					<a ng-click="removeAdmin(admin.username);admins.splice(admins.indexOf(admin), 1)" class='waves-effect waves-light btn-floating btn-small blue darken-2 right'><i class="material-icons right">clear</i></a>
 					<div class="collapsible-header">
@@ -86,7 +86,7 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>
-			<ul ng-app="app" ng-controller="EventCtrl "class="collapsible popout" data-collapsible="accordion" ng-init="getOrganizers()">      
+			<ul ng-controller="OrganizerCtrl "class="collapsible popout" data-collapsible="accordion" ng-init="getOrganizers()">      
 				<li class="hoverable" ng-repeat="org in organizers" ng-init="removeOrganizer()">
 					<a ng-click="clicked(org.username);organizers.splice(organizers.indexOf(org), 1)" class='waves-effect waves-light btn-floating btn-small blue darken-2 right'><i class="material-icons right">clear</i></a>
 					<a class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">create</i></a>
@@ -164,5 +164,5 @@
 </div>
 
 <script type="text/javascript" src="../assets/js/jquery-1.12.3.js""></script>
-<script src="../assets/js/materialize.min.js"></script>
-<script src="../assets/js/short2.js"></script>
+<script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="../assets/js/short2.js"></script>

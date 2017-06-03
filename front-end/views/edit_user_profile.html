@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>
 
 <div class="navbar-fixed">
@@ -13,13 +13,13 @@
 				<a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a>
 			</li>
 			<li class="divider"></li>
-			<li ng-controller="EventCtrl" ng-init="logout()">
+			<li ng-controller="UserCtrl" ng-init="logout()">
 				<a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a>
 			</li>
 		</ul>
 		<div class="nav-wrapper">
 			<a href="/#/home" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
-			<ul class="right hide-on-med-and-down" ng-controller="EventCtrl">
+			<ul class="right hide-on-med-and-down">
 				<li>
 					<a class="waves-effect waves-light btn blue darken-2" href="/#/home">Home</a>
 				</li>
@@ -31,7 +31,7 @@
 	</nav>
 </div>
 
-<div class="container center" ng-app="app" ng-controller="EventCtrl" ng-init="getDetails()">
+<div class="container center" ng-controller="OrganizerCtrl" ng-init="getDetails()">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Organizer Form</h1>

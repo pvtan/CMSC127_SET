@@ -2,7 +2,7 @@
 
 (() => {
 	angular.module('app')
-		.controller('EventCtrl', EventCtrl) //name, then callback function
+		.controller('EventCtrl', EventCtrl)
 		
     EventCtrl.$inject = ['$scope', '$window', '$filter', 'EventService'];
 

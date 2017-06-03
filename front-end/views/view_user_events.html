@@ -1,4 +1,4 @@
-<div class="navbar-fixed" ng-controller="EventCtrl">
+<div class="navbar-fixed" ng-controller="UserCtrl">
 	<nav class="orange darken-2">
 		<ul id="dropdown1" class="dropdown-content">
 			<li>
@@ -8,8 +8,8 @@
 			<li>
 				<a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a>
 			</li>
-		  <li class="divider"></li>
-			<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+			<li class="divider"></li>
+			<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 		</ul>
 		<div class="nav-wrapper">
 			<a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
@@ -74,7 +74,7 @@
 	</div>
 </div>
 
-<div ng-app="app" ng-controller="EventCtrl" class="container" id="printArea">
+<div ng-app="app" ng-controller="FrontendCtrl" class="container" id="printArea">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Events</h1>
@@ -96,9 +96,9 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>                
-			<ul ng-app="app" ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getUser(1)">      
-				<li ng-repeat="a in pendingEvents | orderBy: 'event_date'">
-					<a ng-click="cancelEvent(a.name);pendingEvents.splice(pendingEvents.indexOf(a), 1)" class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">clear</i></a>
+			<ul ng-controller="UserCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getUser(1)">      
+				<li ng-controller="EventCtrl" ng-repeat="a in pendingEvents | orderBy: 'event_date'">
+					<a ng-click="removeEvent(a)" class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">clear</i></a>
 					<div class="collapsible-header">
 						<div class="chip"><img src="../assets/images/for.jpg" alt="Contact Person"/>{{a.name}}</div>
 					</div>
@@ -150,7 +150,7 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>  
-			<div ng-app="app" ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getUser(0)">
+			<div ng-controller="UserCtrl" class="row center-cols center-align" ng-init="getUser(0)">
 				<div class="col m6" ng-repeat="b in approvedEvents | orderBy: b.event_date">
 					<div class="card small" style="width: 350px;">
 						<div class="card-image waves-effect waves-block waves-light">

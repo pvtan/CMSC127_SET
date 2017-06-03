@@ -1,7 +1,7 @@
 <div ng-app="app">
 	<div class="navbar-fixed">	    
 		<nav class="amber darken-3">
-			<div class="nav-wrapper" ng-controller="EventCtrl">
+			<div class="nav-wrapper" ng-controller="FrontendCtrl">
 				<a href="#!" class="brand-logo waves-effect waves-light"><i class="material-icons right">view_module</i>S.E.T.</a>
 				<ul class="right">
 					<div>
@@ -19,7 +19,7 @@
 	    </nav>
 	</div>
 
-	<div id="loginModal" class="modal" ng-controller="EventCtrl" ng-init="login()">
+	<div id="loginModal" class="modal" ng-controller="UserCtrl" ng-init="login()">
 		<div class="modal-content">
 			<div class="input-field ">
 				<input id="name" type="text" class="validate" ng-model="loginData.username">
@@ -35,7 +35,7 @@
 		</div>
 	</div>
 
-	<div id="sign-upModal" class="modal" ng-controller="EventCtrl" ng-init="addOrganizer()">
+	<div id="sign-upModal" class="modal" ng-controller="OrganizerCtrl" ng-init="addOrganizer()">
 		<div class="modal-content">
 			<h3 class="center"> SIGN-UP </h3><hr>
 			<form class="center col s12">
@@ -72,7 +72,7 @@
 					</div>
 					<div class="input-field col s9">
 						<i class="material-icons prefix">email</i>
-						<input id="email" type="email" class="validate" ng-model="newOrganizer.email_address">
+						<input id="email" type="text" class="validate" ng-model="newOrganizer.email_address">
 						<label for="email">Email</label>
 					</div>
 					<div class="input-field col s9">

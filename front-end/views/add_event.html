@@ -9,7 +9,7 @@
 				<a href="/#/view_events" class="orange-text text-darken-4"><i class="material-icons right">today</i>My Events</a>
 			</li>
 			<li class="divider"></li>
-			<li ng-controller="EventCtrl" ng-init="logout()">
+			<li ng-controller="UserCtrl" ng-init="logout()">
 				<a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a>
 			</li>
 		</ul>
@@ -27,7 +27,7 @@
 	</nav>
 </div>
 
-<div ng-app="app" ng-controller="EventCtrl" class="container center">
+<div ng-controller="EventCtrl" class="container center">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Event Form</h1>
@@ -46,13 +46,13 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="Date" type="date" class="datepicker validate center-align" ng-model="newEvent.event_date">
+					<input id="Date" class="datepicker validate center-align" ng-model="newEvent.event_date">
 					<label for="date" class="left-align">Date</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="Start" type="time" class="timepicker validate center-align" ng-model="newEvent.time_start">
+					<input id="Start" type="time" class="clockpicker validate center-align" ng-model="newEvent.time_start">
 					<label for="start" class="left-align">Time Start</label>
 				</div>
 			</div>
@@ -80,9 +80,9 @@
 					<label for="details" class="left-align">Details</label>
 				</div>
 			</div> 
-			<div class="row">
-				<div class="input-field col s12 " ng-init="getVenues()">
-					<select class="pick" ng-model="newEvent.venue[venue.name]" ng-options="venue.name for venue in venues"></select>
+			<div class="row" ng-controller="VenueCtrl">
+				<div class="input-field col s12" ng-init="getVenues()">
+					<select class="pick" ng-model="newEvent.venue[venue.name]" ng-options="venue.name for venue in venues track by venue.venueID"></select>
 					<label for="venue" class="left-align">Venue</label>
 				</div>
 			</div>  

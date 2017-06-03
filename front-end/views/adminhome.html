@@ -1,5 +1,5 @@
 <ul id="dropdown1" class="dropdown-content">
-	<li ng-controller="EventCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
+	<li ng-controller="UserCtrl" ng-init="logout()"><a ng-click="clicked()" class="orange-text text-darken-4"><i class="material-icons right">power_settings_new</i>Log Out</a></li>
 </ul>
 
 <div class="navbar-fixed"> 
@@ -24,7 +24,7 @@
 	</nav>
 </div>
 
-<div ng-app="app" ng-controller="EventCtrl" class="container" id="printArea">
+<div ng-controller="FrontendCtrl" class="container" id="printArea">
 	<div class="row center-cols center-align">
 		<div>   
 			<h1>Events</h1>
@@ -44,7 +44,7 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>                
-			<ul ng-app="app" ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getPendingEvents()">      
+			<ul ng-controller="EventCtrl" class="collapsible popout" data-collapsible="accordion" ng-init="getPendingEvents()">      
 				<li ng-repeat="a in pendingEvents | orderBy: 'event_date'" ng-init="removeEvent()">
 					<a ng-click="clicked(a.name); pendingEvents.splice(pendingEvents.indexOf(a), 1)" class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">clear</i></a>
 					<a ng-click="approveEvent(a.name)" class='waves-effect waves-light btn-floating blue darken-2 right'><i class="material-icons right">check</i></a>
@@ -75,7 +75,7 @@
 					<li class="divider"></li>
 				</ul>          
 			</div>  
-			<div ng-app="app" ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getApprovedEvents()">
+			<div ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getApprovedEvents()">
 				<div class="col m6" ng-repeat="b in approvedEvents | orderBy: 'event_date'" ng-init="removeEvent()" id="printEvent">
 					<div class="card small" style="width: 275px;">
 						<div class="card-image waves-effect waves-block waves-light">
@@ -109,7 +109,7 @@
 				<li class="divider"></li>
 			</ul>          
 			</div>  
-			<div ng-app="app" ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getCancelledEvents()">
+			<div ng-controller="EventCtrl" class="row center-cols center-align" ng-init="getCancelledEvents()">
 				<div class="col m6" ng-repeat="b in cancelledEvents | orderBy: 'event_date'" ng-init="removeEvent()" id="printEvent">
 					<div class="card small" style="width: 275px;">
 						<div class="card-image waves-effect waves-block waves-light">
